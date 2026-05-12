@@ -322,20 +322,20 @@ Q.chancellor_party = 'Z';
 Q.spd_in_government = 0;
 Q.z_in_government = 1;
 Q.ddp_in_government = 0;
-Q.dvp_in_government = 1;
+Q.dvp_in_government = 0;
 Q.dnvp_in_government = 1;
 Q.kpd_in_government = 0;
 Q.nsdap_in_government = 0;
 
 Q.in_right_coalition = 0;
-// Weimar coalition = SPD + Z + DDP
+// Weimar coalition = SDAPO + CSP + DDP
 Q.in_weimar_coalition = 0;
-// Grand coalition = SPD + Z + BVP + DDP + DVP
-// also includes the "new grand coalition" of SPD + Z + BVP + DDP + DVP + Others
+// Grand coalition = SDAPO + CSP
+// also includes the "new grand coalition" of SDAPO + CSP + LB
 Q.in_grand_coalition = 0;
-// Popular front = SPD + KPD + Z + DDP
+// Popular front = SDAPO + KPO + LB
 Q.in_popular_front = 0;
-// left coalition = SPD + KPD + left-splinters
+// left coalition = SDAPO + KPO + left-splinters
 Q.in_left_front = 0;
 // emergency government containing the SPD: only president Braun can do this.
 Q.in_emergency_government = 0;
@@ -497,9 +497,9 @@ Q.n_elections = 0;
 Q.no_majority_elections = 0;
 // elections are not on a timer, but rather there is an indicator for whether you're in an electoral cycle.
 Q.in_election = 1;
-Q.next_election_year = 1928;
-Q.next_election_month = 5;
-Q.next_election_time = 5;
+Q.next_election_year = 1927;
+Q.next_election_month = 4;
+Q.next_election_time = 27;
 // government affairs timers
 Q.agricultural_policy_timer = 0;
 Q.domestic_enemies_timer = 0;
@@ -666,8 +666,8 @@ Q.wurttemberg_z = 1;
 Q.wurttemberg_other = 2.3;
 Q.wurttemberg_nsdap = 0.1;
 
-Q.prussia_election_year = 1928;
-Q.prussia_election_month = 5;
+Q.vienna_election_year = 1928;
+Q.vienna_election_month = 5;
 
 Q.bavaria_election_year = 1928;
 Q.bavaria_election_month = 5;
@@ -687,14 +687,14 @@ Q.hamburg_election_month = 2;
 Q.wurttemberg_election_year = 1928;
 Q.wurttemberg_election_month = 5;
 
-Q.spd_pl = 25;
-Q.dnvp_pl = 24;
-Q.z_pl = 18;
-Q.dvp_pl = 10;
-Q.kpd_pl = 10;
-Q.ddp_pl = 6;
-Q.nsdap_pl = 2;
-Q.other_pl = 6;
+Q.spd_pl = 78;
+Q.dnvp_pl = 0;
+Q.z_pl = 22;
+Q.dvp_pl = 0;
+Q.kpd_pl = 0;
+Q.ddp_pl = 0;
+Q.nsdap_pl = 0;
+Q.other_pl = 0;
 
 Q.spd_bl = 17;
 Q.z_bl = 33;
