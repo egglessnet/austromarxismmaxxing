@@ -9,9 +9,9 @@ card-image: img/sangerbund.jpg
 
 = Media
 
-The SPD runs a veritable media empire, with many newspapers throughout every German city and region. We could use the media for various purposes...
+The SDAPO runs a veritable media empire, with many newspapers throughout every austrian city. We could use the media for various purposes...
 
-- @commercial
+- @agro
 - @campaign
 - @ideological
 - @radio
@@ -22,12 +22,12 @@ The SPD runs a veritable media empire, with many newspapers throughout every Ger
 - @easy_discard
 - @cancel_advisor_action
 
-@commercial
-title: Make our newspapers more commercialized by broadening their appeal beyond party supporters.
-subtitle: This might upset ideological purists, but it may bring in more funds and perhaps expose the middle class to socialist views.
-on-arrival: resources += 1; commercialized_media += 1; new_middle_spd += 4*(1 - dissent); old_middle_spd += 3*(1-dissent); left_dissent += 10; labor_dissent += 10
+@agro
+title: Expand into the rural areas
+subtitle: This might upset ideological purists, but it may bring in more funds and perhaps expose the rural workers to socialist views.
+on-arrival: resources += 1; commercialized_media += 1; rural_spd += 4*(1 - dissent); rural_spd += 3*(1-dissent) if nationalism < socialism; center_dissent += 10
 
-Our commercialized newspapers are able to bring in more funds. However, the left and labor factions express their displeasure.
+Our commercialized newspapers are able to bring in more funds. However, the centre faction expresses their displeasure.
 
 @campaign
 title: The purpose of our media is to elect more Social Democrats.
