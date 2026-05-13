@@ -11,7 +11,7 @@ max-visits: 6
 At the Labor and Socialist International, we can forge contacts with our fraternal socialist parties in Europe and across the world.
 
 - @fr_uk: Build relationships with the French SFIO and British Labour Party to move their governments in Germany's favor.
-- @austria: Learn organization and street fighting from the Austrian SDAPÖ.
+- @germany: Build relations with our German brothers in the SPD.
 - @scandi: Learn the path of economics and reform from the Scandinavian social democrats.
 - @comintern: Forget the second international - embed a spy in the Comintern's conference.
 - @america: Contact the Socialist party of America.
@@ -29,15 +29,14 @@ on-arrival: resources -= 1; west_relation += 1; reformist_strength += 5; pacifis
 The socialists of France and Britain can influence their governments to be friendlier towards Germany. Hopefully they will reduce our reparations burden.
 
 @austria
-subtitle: -1 resources [? if austrian_parliament_seen and not austrian_civil_war_seen: - We will also help the Austrians oppose their dictatorship. ?]
+subtitle: -1 resources [? if austrian_parliament_seen and not austrian_civil_war_seen: - they will also help us oppose the dictatorship. ?]
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 audio: shuffle music/communist/workers_of_vienna_normalized.mp3
-on-arrival: left_strength += 5; radicalization += 1; rb_militancy += 0.03; resources -= 1; austria_relation += 1; sdapo_strength += 1 if austrian_parliament_seen = 1
+on-arrival: left_strength += 5; radicalization += 1; rb_militancy += 0.03; resources -= 1; germany_relation += 1; sdapo_strength += 1 if austrian_parliament_seen = 1
 
-Our Reichsbanner can learn much in paramilitary organization and training from the Austrian Republikanischer Schutzbund (Republican Protection Units), the paramilitary branch of the Austrian social democrats.
-
-[? if austrian_parliament_seen and not austrian_civil_war_seen: We are also helping the Austrian Social Democratic Worker's Party build up their resources in preparation for a future struggle, legally and illegally. ?]
+Their Reichsbanner can learn much in paramilitary organization and training from our Republikanischer Schutzbund (Republican Protection Units), and in exchange we hope to form a united German nation.
+[? if austrian_parliament_seen and not austrian_civil_war_seen: They are also helping us build up our resources in preparation for a future struggle, legally and illegally. ?]
 
 @scandi
 subtitle: -1 resources
@@ -53,7 +52,7 @@ choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; kpd_relation += 5*(1-dissent); communist_coalition += 1 if comintern_seen == 0; comintern_seen += 1
 
-The Stalinists of the KPD insists on calling us "social fascists", suggesting that we social democrats are as bad or worse than actual fascists. Needless to say, this is not good for our relationship with the Communists. By observing the Comintern, we can better understand the KPD, enabling us to potentially improve relations, or counter the KPD if it may come to that.
+The moderate Communists of the KPO are already very close to us, but by monitoring the Comintern we can help protect them from Stalinisation.
 
 [? if wittorf_soviet_union != 1 and spd_in_government == 0 and dnvp_in_government and volksmai == 1 and comintern_seen >= 1 and wittorf_secret = 1 and ((year = 1929 and month < 7) or year = 1928) and wittorf_soviet_union = 0 : We have built up enough contacts in the Comintern that, if we wished, we could reach Moscow through them and see if the Soviets know about the Wittorf Affair, and if they know that we know. ?]
 
@@ -86,7 +85,7 @@ choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; republic_strength += 0.1; republic_strength += 0.1 if smuggle_seen and foreign_minister_party == "SPD"; republic_strength += 0.05 if rb_force >= 25; reformist_dissent += 4; left_strength += 2; left_dissent -= 3; rb_militancy -= 0.01; rb_strength -= 20
 
-We send aid to the Republicans in Spain, redirecting resources from our Reichsbanner to their international brigades and encouraging volunteers to go and fight. How much we can help with just these resources is limited, but every little bit is appreciated. [? if smuggle_seen : The Foreign Ministry is helping smuggle these volunteers, allowing a greater flow. ?]
+We send aid to the Republicans in Spain, redirecting resources from our Schutzbund to their international brigades and encouraging volunteers to go and fight. How much we can help with just these resources is limited, but every little bit is appreciated. [? if smuggle_seen : The Foreign Ministry is helping smuggle these volunteers, allowing a greater flow. ?]
 
 @reduce
 
