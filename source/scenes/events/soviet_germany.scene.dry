@@ -1,5 +1,5 @@
-title: A New Soviet Germany
-subtitle: The KPD has risen to the forefront of German politics...
+title: A New Soviet Austria
+subtitle: The KPO has risen to the forefront of Austrian politics...
 new-page: true
 view-if: kpd_influence >= 10 and (in_left_front or in_popular_front or (kpd_r >= 50 and chancellor_party == "KPD")) and (sa_banned and sh_banned) and ((president == "Münzenberg" or president == "Thälmann") or (red_banner == 1) or ((kpd_r*rfb_strength*rfb_militancy) >= (spd_r*rb_strength*rb_militancy*(1-dissent))))
 tags: event
@@ -9,7 +9,7 @@ max-visits: 1
 
 = A New Soviet Germany
 
-Ever since the first entrance of the Communists into government they have worked to transform Germany into their image, to rebuild it from the ground up. These efforts finally seem to have come to fruition, as the Communists stand miraculously at the forefront of the German political arena, with none left to oppose them in their quest.
+Ever since the first entrance of the Communists into government they have worked to transform Austria into their image, to rebuild it from the ground up. These efforts finally seem to have come to fruition, as the Communists stand miraculously at the forefront of the Austria political arena, with none left to oppose them in their quest.
 
 @confrontation
 
@@ -111,7 +111,7 @@ if (Q.chancellor_party == "SPD") {
 !}
 go-to: defeat if republican_strength < communist_strength; victory if republican_strength >= communist_strength 
 
-Firefights erupt across the nation between the Reichsbanner and RFB. For one day, the whole of Germany is in a confused chaos as ministry contradicts ministry and soviet turns on soviet.[? if chancellor_party == "KPD" : The confusion benefits the communists, as they hold the chancellory. ?][? if chancellor_party == "SPD" : The confusion benefits us, as we hold the chancellory. ?]
+Firefights erupt across the nation between the Schutzbund and RFB. For one day, the whole of Ausria is in a confused chaos as ministry contradicts ministry and soviet turns on soviet.[? if chancellor_party == "KPD" : The confusion benefits the communists, as they hold the chancellory. ?][? if chancellor_party == "SPD" : The confusion benefits us, as we hold the chancellory. ?]
 
 @defeat
 
@@ -123,7 +123,7 @@ Eventually, the communists emerge victorious. [? if chancellor_party != "KPD" : 
 on-arrival: in_left_front = 0; in_popular_front = 0; time_to_election = 3; kpd_influence = 0; communist_coalition -= 3; kpd_relation -= 60; rfb_militancy -= 0.5; rfb_strength *= 0.6; workers_kpd *= 0.7; unemployed_kpd *= 0.9; new_middle_kpd *= 0.9;
 call: set_next_election_time
 
-Eventually, the RFB's forces fall, and putschist soviets brought under the Iron Front's control. The capital is secured, and all communist ministers sacked as the coup falls apart. Social Democracy has prevailed.
+Eventually, the RFB's forces fall, and putschist soviets brought under the Schutzbund's control. The capital is secured, and all communist ministers sacked as the coup falls apart. Social Democracy has prevailed.
 
 - @ban_kpd: Crack down on the communists.
 - @forgive: What's done is done.
@@ -133,42 +133,42 @@ on-arrival: kpd_banned = 1; party_bans = 1; left_dissent += 25
 
 Putschism cannot be forgiven. The communists at our mercy, we put an end to their aspirations once and for all by banning the party. 
 
-- @unban_bourgeois: Unban the [+ ddp_name +] and Center.
-- @unban_ddp: Unban the [+ ddp_name +].
-- @unban_z: Unban the Center Party.
+- @unban_bourgeois: Unban the Landbund and CSP.
+- @unban_ddp: Unban the Landbund.
+- @unban_z: Unban the CSP.
 - @maintain: Now and forever, Social Democracy shall reign.
 
 @unban_bourgeois
-view-if: ddp_banned and z_banned
-on-arrival: ddp_banned = 0; z_banned = 0
-subtitle: We must begin to undo the damage that the KPD has done.
+view-if: dvp_banned and z_banned
+on-arrival: dvp_banned = 0; z_banned = 0
+subtitle: We must begin to undo the damage that the KPO has done.
 
-Of course, we re-legalize the moderate liberal parties. The KPD fought hard to stifle democracy, and now we shall let it flourish again.
+Of course, we re-legalize the moderate right-wing parties. The KPO fought hard to stifle democracy, and now we shall let it flourish again. However, with our former support of their banning, they are more hostile to us than ever before.
 
 @maintain
-view-if: ddp_banned or z_banned
+view-if: dvp_banned or z_banned
 subtitle: Was it worth it?
 on-arrival: reformist_dissent += 20
 go-to: root
 
 @unban_ddp
-view-if: ddp_banned and not z_banned
-on-arrival: ddp_banned = 0
-subtitle: We must begin to undo the damage that the KPD has done.
+view-if: dvp_banned and not z_banned
+on-arrival: dvp_banned = 0
+subtitle: We must begin to undo the damage that the KPO has done.
 
-Of course, we re-legalize the [+ ddp_name +]. The KPD fought hard to stifle democracy, and now we shall let it flourish again.
+Of course, we re-legalize the Landbund. The KPO fought hard to stifle democracy, and now we shall let it flourish again. However, our forced collectivisations have forced them away from us.
 
 @unban_z
-view-if: z_banned and not ddp_banned
+view-if: z_banned and not dvp_banned
 on-arrival: z_banned = 0
-subtitle: We must begin to undo the damage that the KPD has done.
+subtitle: We must begin to undo the damage that the KPO has done.
 
-Of course, we re-legalize the Center Party. The KPD fought hard to stifle democracy, and now we shall let it flourish again.
+Of course, we re-legalize the CSP. The KPO fought hard to stifle democracy, and now we shall let it flourish again. However, our land reform and progressive policies have deterred them from co-operation.
 
 @forgive
 on-arrival: kpd_relation += 10
 
-What's done is done. We don't need to ban the KPD, they have exhausted the threat they pose in their failed putsch.
+What's done is done. We don't need to ban the KPO, they have exhausted the threat they pose in their failed putsch.
 
 @cave
 go-to: conclusion
