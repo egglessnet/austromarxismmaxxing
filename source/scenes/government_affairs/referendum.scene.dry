@@ -8,7 +8,7 @@ tags: govt_affairs
 
 = Direct Democracy
 
-As part of the Weimar constitution, petitions, if they gain enough signatures, may be put to nationwide referendums for the people to directly vote on laws. We may not be in government, but we can try to bypass this and campaign ourselves for certain laws or actions, which, even if fail, may invigorate our supporters or provide publicity.
+As part of the Austrian constitution, petitions, if they gain enough signatures, may be put to nationwide referendums for the people to directly vote on laws. We may not be in government, but we can try to bypass this and campaign ourselves for certain laws or actions, which, even if fail, may invigorate our supporters or provide publicity.
 
 Should we initiate any petitions?
 
@@ -38,11 +38,11 @@ subtitle: Call for breaking up the large aristocratic estates and giving land to
 view-if: land_referendum_timer = 0
 choose-if: budget >= 1
 unavailable-subtitle: The government doesn't have the budget to pursue this.
-on-arrival: land_referendum_timer += 12; kpd_relation += 5; rural_spd += 6*(1-dissent); rural_spd += 3*(1-dissent) if peoples_party; rural_kpd += 1; rural_dnvp -= 8*(1-dissent); rural_nsdap -= 3*(1-dissent); dvp_relation -= 8; z_relation -= 6; left_strength += 10; left_dissent -= 5; ddp_support = 1 if ddp_relation >= 65; referendum_support = (spd_votes + kpd_votes + sapd_votes); referendum_support += ddp_votes if ddp_support == 1; other_factor = ((100*(rural/(workers+unemployed+new_middle+old_middle+rural+catholics)))*((1-dissent)/2)); referendum_support += other_factor; referendum_succeed = 1 if referendum_support >= 50; referendum_succeed = 0 if referendum_support < 50; {! 
+on-arrival: land_referendum_timer += 12; kpd_relation += 5; rural_spd += 6*(1-dissent); rural_spd += 3*(1-dissent) if peoples_party; rural_kpd += 1; rural_z -= 8*(1-dissent); rural_dnvp -= 3*(1-dissent); dvp_relation += 4; z_relation -= 6; left_strength += 10; left_dissent -= 5; ddp_support = 1 if ddp_relation >= 65; referendum_support = (spd_votes + kpd_votes + sapd_votes); referendum_support += ddp_votes if ddp_support == 1; other_factor = ((100*(rural/(workers+unemployed+new_middle+old_middle+rural+catholics)))*((1-dissent)/2)); referendum_support += other_factor; referendum_succeed = 1 if referendum_support >= 50; referendum_succeed = 0 if referendum_support < 50; dvp_rural += 2; {! 
 Q.referendum_support.toFixed(1);
 !}
 
-We initiate a petition for the implementation of a land reform program and launch a campaign through the countryside to get it the signatures it needs. Many of our grassroots members in their campaigning for the petition campaign alongside the Communists, who quickly involve themselves in the referendum [? if kpd_relation < 25 : despite their hostility toward Social Democracy?]. Soon it gains enough signatures to be put to a referendum, which the DNVP aggressively campaigns against, leading to a decrease in their rural support as previously reactionary farmers turn against the party.
+We initiate a petition for the implementation of a land reform program and launch a campaign through the countryside to get it the signatures it needs. Many of our grassroots members in their campaigning for the petition campaign alongside the Landbund, who quickly involve themselves in the referendum [? if dvp_relation < 30 : despite their hostility toward Marxism?]. Soon it gains enough signatures to be put to a referendum, which the CSP and GDVP aggressively campaign against, leading to a decrease in their rural support as previously reactionary farmers turn against the party.
 
 - @land_reform_success: The referendum succeeds.
 - @land_reform_fail: The referendum fails.
@@ -51,7 +51,7 @@ We initiate a petition for the implementation of a land reform program and launc
 view-if: referendum_succeed
 on-arrival: budget -= 1; land_reform += 1; coalition_dissent += 1; rural_spd += 3*(1-dissent); rural_nsdap -= 3*(1-dissent); unemployed -= 1 if unemployed >= 5; left_strength += 2; left_dissent -= 1; rural_sol += 3; rural_policy += 1; coup_progress += 1
 
-The referendum has succeeded with [+ referendum_support +]% of the vote! The influence of reactionaries in the German countryside has diminished as the estates of junkers are dismantled and redistributed, though quite reluctantly and shoddily by [+ agriculture_minister +], the agricultural minister.
+The referendum has succeeded with [+ referendum_support +]% of the vote! The influence of reactionaries in the German countryside has diminished as the estates of landowners are dismantled and redistributed, though quite reluctantly and shoddily by [+ agriculture_minister +], the agricultural minister.
 
 @land_reform_fail
 view-if: not referendum_succeed
@@ -63,11 +63,11 @@ view-if: (nationalization_adopted or socializations >= 2) and unemployed >= 20 a
 subtitle: Call for mass nationalizations and the transformation of the economy.
 choose-if: budget >= (nationalize_budget/2)
 unavailable-subtitle: The government doesn't have the budget to pursue this.
-on-arrival: nationalization_referendum_timer += 12; kpd_relation += 10; nationalization_support += 2 if nationalization_adopted == 0; workers_spd += 6*(1-dissent); new_middle_spd -= 2 if not new_middle_conscious; old_middle_spd -= 3; workers_spd += (works_councils*(1-dissent)) if works_councils >= 2; workers_kpd += 2; workers_kpd += 1 if sapd_consolidated == 0; workers_sapd += 1 if sapd_consolidated == 1; unemployed_spd += 3*(1-dissent); unemployed_kpd += 1; dvp_relation -= 12; z_relation -= 8; ddp_relation -= 4; reformist_dissent += 2; left_dissent -= 8; left_strength += 5; left_strength += 5 if left_split == 0; referendum_support = (spd_votes + kpd_votes + sapd_votes); referendum_support -= (spd_votes*dissent); left_factor = ((75*(workers/(workers+unemployed+new_middle+old_middle+rural+catholics)))*(left_strength/(left_strength+center_strength+reformist_strength+neorevisionist_strength+labor_strength))); referendum_support += left_factor; referendum_succeed = 1 if referendum_support >= 50; referendum_succeed = 0 if referendum_support < 50; {! 
+on-arrival: nationalization_referendum_timer += 12; kpd_relation += 10; nationalization_support += 2 if nationalization_adopted == 0; workers_spd += 6*(1-dissent); new_middle_spd -= 2 if not new_middle_conscious; old_middle_spd -= 3; workers_spd += (works_councils*(1-dissent)) if works_councils >= 2; workers_kpd += 2; workers_kpd += 1 if sapd_consolidated == 0; workers_sapd += 1 if sapd_consolidated == 1; unemployed_spd += 3*(1-dissent); unemployed_kpd += 1; dvp_relation -= 4; z_relation -= 12; dnvp_relation -= 8; reformist_dissent += 2; left_dissent -= 8; left_strength += 5; left_strength += 5 if left_split == 0; referendum_support = (spd_votes + kpd_votes + sapd_votes); referendum_support -= (spd_votes*dissent); left_factor = ((75*(workers/(workers+unemployed+new_middle+old_middle+rural+catholics)))*(left_strength/(left_strength+center_strength+reformist_strength+neorevisionist_strength+labor_strength))); referendum_support += left_factor; referendum_succeed = 1 if referendum_support >= 50; referendum_succeed = 0 if referendum_support < 50; {! 
 Q.referendum_support.toFixed(1);
 !}
 
-We initiate a petition for the nationalization of large idle industry by the government and its bringing under the control of [? if works_councils >= 2 : national planning boards made up of works council and state representatives ?][? if works_councils < 2 : the government ?] in order to fix the economy. We launch a campaign for this petition through the industrial regions of Germany, from workplace to workplace [? if works_councils >= 2 : and works council to works council ?] as soon the KPD joins in our campaign. The petition quickly gains the required signatures and is put to a nationwide referendum.
+We initiate a petition for the nationalization of large idle industry by the government and its bringing under the control of [? if works_councils >= 2 : national planning boards made up of works council and state representatives ?][? if works_councils < 2 : the government ?] in order to fix the economy. We launch a campaign for this petition through the industrial regions of Germany, from workplace to workplace [? if works_councils >= 2 : and works council to works council ?] as soon the KPO joins in our campaign. The petition quickly gains the required signatures and is put to a nationwide referendum.
 
 - @nationalization_success: The referendum succeeds.
 - @nationalization_fail: The referendum fails.
@@ -86,7 +86,7 @@ Unfortunately, the referendum has failed with only [+ referendum_support +]% of 
 @work_council_vote
 view-if: works_councils < 3 and council_referendum_timer = 0
 subtitle: Call for the expansion and empowering of works councils to further economic democracy.
-on-arrival: council_referendum_timer += 12; workers_spd += 8*(1-dissent); workers_kpd += 1 if sapd_consolidated == 0; workers_sapd += 1 if sapd_consolidated == 1; workers_z += 2 if z_relation >= 60 and z_party_leader == "Joos"; labor_dissent -= 5; labor_strength += 8; dvp_relation -= 6; z_relation -= 3 if z_party_leader != "Joos"; referendum_support = (spd_votes + kpd_votes + sapd_votes); referendum_support += (workers_z_normalized*(workers/(workers+unemployed+new_middle+old_middle+rural+catholics))) if z_party_leader != "Joos" or z_relation < 60; referendum_support += z_votes if z_relation >= 60 and z_party_leader == "Joos"; referendum_support += ddp_votes if works_council < 1 and ddp_relation >= 50; referendum_support += ddp_votes if works_council < 2 and works_council > 1 and ddp_relation >= 60; referendum_support += ddp_votes if works_council >= 2 and ddp_relation >= 75; union_council_factor = 100*(((labor_strength/(left_strength+center_strength+labor_strength+reformist_strength+neorevisionist_strength))*workers)/(workers+unemployed+new_middle+old_middle+rural+catholics)); referendum_support += union_council_factor*(1-dissent); referendum_succeed = 1 if referendum_support >= 50; referendum_succeed = 0 if referendum_support < 50; {! 
+on-arrival: council_referendum_timer += 12; workers_spd += 8*(1-dissent); workers_kpd += 1 if sapd_consolidated == 0; workers_sapd += 1 if sapd_consolidated == 1; workers_z += 2 if z_relation >= 60 and z_party_leader == "Joos"; labor_dissent -= 5; labor_strength += 8; csp_relation -= 3 if z_party_leader != "Joos"; referendum_support = (spd_votes + kpd_votes + sapd_votes); referendum_support += (workers_z_normalized*(workers/(workers+unemployed+new_middle+old_middle+rural+catholics))) if z_party_leader != "Joos" or z_relation < 60; referendum_support += z_votes if z_relation >= 60 and z_party_leader == "Joos"; referendum_support += ddp_votes if works_council < 1 and ddp_relation >= 50; referendum_support += ddp_votes if works_council < 2 and works_council > 1 and ddp_relation >= 60; referendum_support += ddp_votes if works_council >= 2 and ddp_relation >= 75; union_council_factor = 100*(((labor_strength/(left_strength+center_strength+labor_strength+reformist_strength+neorevisionist_strength))*workers)/(workers+unemployed+new_middle+old_middle+rural+catholics)); referendum_support += union_council_factor*(1-dissent); referendum_succeed = 1 if referendum_support >= 50; referendum_succeed = 0 if referendum_support < 50; {! 
 Q.referendum_support.toFixed(1);
 !}
 
@@ -111,18 +111,18 @@ view-if: state_buyer_passed != 1 and buyer_referendum_timer = 0
 subtitle: Call for the creation of a state monopoly for grain purchases, guaranteeing prices for farmers and stable prices for consumers.
 choose-if: budget >= 2
 unavailable-subtitle: The government doesn't have the budget to pursue this.
-on-arrival: buyer_referendum_timer += 12; rural_spd += 2*(1-dissent); rural_nsdap -= 1*(1-dissent); workers_spd += 4*(1-dissent); unemployed_spd += 5*(1-dissent); unemployed_kpd += 2; dvp_relation -= 6; z_relation -= 4; peoples_party_support += 1; referendum_support = (spd_votes + sapd_votes + (0.8*kpd_votes)); referendum_support += ddp_votes if ddp_relation >= 75; referendum_succeed = 1 if referendum_support >= 50; referendum_succeed = 0 if referendum_support < 50; {! 
+on-arrival: buyer_referendum_timer += 12; rural_spd += 2*(1-dissent); rural_z -= 1*(1-dissent); workers_spd += 4*(1-dissent); unemployed_spd += 5*(1-dissent); unemployed_kpd += 2; dnvp_relation -= 6; z_relation -= 4; peoples_party_support += 1; referendum_support = (spd_votes + sapd_votes + (0.8*kpd_votes)); referendum_support += dvp_votes if ddp_relation >= 50; referendum_succeed = 1 if referendum_support >= 50; referendum_succeed = 0 if referendum_support < 50; {! 
 Q.referendum_support.toFixed(1);
 !}
 
-We initiate a petition for the implementation of a state buyer program, campaigning for it in both the countryside for farmers and amongst the workers. The KPD joins in campaigning for the petition, though not significantly, and it soon gains the signatures it needs for a referendum.
+We initiate a petition for the implementation of a state buyer program, campaigning for it in both the countryside for farmers and amongst the workers. The Landbund joins in campaigning for the petition, though not significantly, and it soon gains the signatures it needs for a referendum.
 
 - @state_buyer_success: The referendum succeeds.
 - @state_buyer_fail: The referendum fails.
 
 @state_buyer_success
 view-if: referendum_succeed
-on-arrival: state_buyer_passed = 1; budget -= 2; state_buyer = 1; rural_spd += 3*(1-dissent); rural_nsdap -= 1*(1-dissent); workers_spd += 1*(1-dissent); unemployed_spd += 1*(1-dissent); rural_policy += 2; capital_strike_progress += 1; economic_growth += 0.3; {! 
+on-arrival: state_buyer_passed = 1; budget -= 2; state_buyer = 1; rural_spd += 3*(1-dissent); rural_z -= 1*(1-dissent); workers_spd += 1*(1-dissent); unemployed_spd += 1*(1-dissent); rural_policy += 2; capital_strike_progress += 1; economic_growth += 0.3; {! 
 Q.referendum_support.toFixed(1);
 !}
 
@@ -187,7 +187,7 @@ Unfortunately, the referendum has failed to pass with only [+ referendum_support
 @abortion_vote
 view-if: abortion_rights = 0 and abortion_referendum_timer = 0
 subtitle: We will push for the relaxation of restrictions on abortion.
-on-arrival: abortion_referendum_timer += 12; weimar_dissent += 1 if weimar_plan_adopted; weimar_dissent += 1 if z_party_leader == "Kaas" and weimar_plan_adopted; z_relation -= 12; workers_spd += 5*(1-dissent); catholics_spd -= 6; new_middle_ddp += 8; new_middle_spd -= 5; old_middle_ddp += 5; old_middle_spd -= 3; old_middle_nsdap -= 2; rural_nsdap -= 2; rural_dnvp += 2; old_middle_dnvp += 2; referendum_support = (spd_votes + ddp_votes + sapd_votes + kpd_votes); referendum_support -= (catholics_spd_normalized*(catholics/(catholics+workers+unemployed+old_middle+new_middle+rural))); referendum_succeed = 1 if referendum_support >= 50; referendum_succeed = 0 if referendum_support < 50; {! 
+on-arrival: abortion_referendum_timer += 12; weimar_dissent += 1 if weimar_plan_adopted; weimar_dissent += 1 if z_party_leader == "Kaas" and weimar_plan_adopted; z_relation -= 12; workers_spd += 5*(1-dissent); catholics_spd -= 6; new_middle_spd += 8; new_middle_z -= 5; old_middle_z += 5; old_middle_spd -= 3; old_middle_dnvp -= 2; rural_dnvp -= 2; rural_nsdap += 2; old_middle_nsdap += 2; referendum_support = (spd_votes + ddp_votes + sapd_votes + kpd_votes); referendum_support -= (catholics_spd_normalized*(catholics/(catholics+workers+unemployed+old_middle+new_middle+rural))); referendum_succeed = 1 if referendum_support >= 50; referendum_succeed = 0 if referendum_support < 50; {! 
 Q.referendum_support.toFixed(1);
 !}
 
