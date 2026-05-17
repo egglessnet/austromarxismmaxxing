@@ -1,6 +1,6 @@
 title: A shooting in Schattendorf.
 view-if: year == 1927 and month >= 1
-on-arrival: schattendorf_seen = 1; nsdap_relation -= 15; rb_militancy += 0.01
+on-arrival: nsdap_relation -= 15; rb_militancy += 0.01
 
 In the aftermath of a Schutzbund rally, a group of men from the Frontkämpfervereinigung Deutsch-Österreichs (a far-right nazi group) attacked our men, killing a Great War veteran and a young boy. Many in the party are baying for blood.
 
@@ -13,7 +13,7 @@ How should we respond?
 @ban
 title: ban the FDO!
 view-if: spd_in_government == 1
-on-arrival: sa_banned = 1; sa_strength *= 0.8; sa_strength *= 0.7 if prussian_police_loyalty >= 0.5; sa_militancy *= 0.8; sa_militancy *= 0.7 if prussian_police_loyalty >= 0.5; nsdap_relation *= 0.8; coalition_dissent += 1; schattendorf_seen = 0
+on-arrival: sa_banned = 1; sa_strength *= 0.8; sa_strength *= 0.7 if prussian_police_loyalty >= 0.5; sa_militancy *= 0.8; sa_militancy *= 0.7 if prussian_police_loyalty >= 0.5; nsdap_relation *= 0.8; coalition_dissent += 1
 
 @rebel
 title: fight back against the nationalists!
@@ -21,10 +21,14 @@ view-if: spd_in_government == 0
 subtitle: this will mean civil war!
 choose-if: rb_militancy >= 2.5 and (left_strength + labor_strength >= reformist_strength)
 unavailable-subtitle: [? if rb_militancy < 2.5 : We are not ready. ?][? if (left_strength + labor_strength < reformist_strength) : We are unwilling to launch a revolution. ?]
+on-arrival: spd_rebel = 1
+
+- @civil_war
 
 @wait
 title: we do not need to react, the law will apprehend the criminals.
 view-if: spd_in_government == 0
 subtitle: [? if judiciary_reformed <= 2 : will it though? ?]
+on-arrival: schattendorf_seen = 1; rb_militancy -= 0.01; rb_strength -= 2; sa_strength += 1
 
 We trust the law to punish them.
