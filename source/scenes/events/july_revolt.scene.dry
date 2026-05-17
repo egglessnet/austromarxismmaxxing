@@ -1,1 +1,34 @@
-title: the Schattendorf shooters are acquitted!
+title: The verdict of the schattendorf shooting.
+view-if: year == 1927 and month >= 7 and schattendorf_seen == 1
+new-page: true
+max-visits: 1
+
+- @sentenced
+- @acquitted
+
+@sentenced
+title: the shooters are sentenced by the court to life imprisonment.
+view-if: judiciary_reformed >= 2
+
+WIP
+
+@acquitted
+title: the shooters are acquitted!
+view-if: judiciary_reformed < 2
+on-arrival: rb_militancy *= 1.1; rb_strength *= 1.1; left_strength *= 1.1; z_relation *= 0.8
+
+In response to the verdict, several regional Scutzbund organistions have revolted! The KPO is urging us to join. How we respond to this may well decide our fate.
+
+- @join
+- @no 
+
+@join
+title: Join the battle!
+on-arrival: spd_rebel = 1
+
+- @civil_war
+
+@no
+title: this is madness!
+choose-if: year == 0
+unavailable_subtitle: WIP
