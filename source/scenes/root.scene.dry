@@ -387,6 +387,7 @@ Q.unemployment_insurance_threshold = 10;
 Q.blutmai = 0;
 Q.return_to_normalcy = 0;
 Q.normalcy_month = Math.floor(Math.random() * 12) + 1;
+Q.austrounity = 0;
 
 // have we reformed these institutions to be more democratic?
 Q.judicial_reform = 0;
@@ -452,7 +453,7 @@ Q.timers = ['advisor_action', 'confronting_nazis', 'crisis_program',
             'iron_front', 'media', 'enemies',
             'party_organizations', 'rally', 'reichsbanner',
             'shuffle_leadership', 'streetfighting', 'peoples_party',
-            'party_disunity', 'weimar_plan',
+            'party_disunity', 'weimar_plan', 'austrounity',
             // govt
             'agricultural_policy', 'domestic_enemies', 'fiscal_policy',
             'foreign_policy', 'judiciary', 'labor_affairs', 'military_policy',
@@ -491,6 +492,7 @@ Q.shuffle_leadership_timer = 0;
 Q.streetfighting_timer = 0;
 Q.peoples_party_timer = 0;
 Q.weimar_plan_timer = 0;
+Q.austrounity_timer = 0;
 // n_elections is the number of elections that have happened since the start of the game.
 Q.n_elections = 0;
 // number of elections without a clear majority.
