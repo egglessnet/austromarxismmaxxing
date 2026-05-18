@@ -1,3 +1,17 @@
 title: The CSP has a proposition...
 new-page: true
-view-if: austrounity >= 5
+view-if: austrounity >= 1 and austrounity_timer <= 0 and z_relation > left_strength and peace == 1
+on-arrival: austrounity_timer = 6
+
+In the light of the growing Nazi threat, the CSP has proposed a merger of all the parties in the Nationalrat, bar the pan-German GDVP and communist KPO.
+
+Although they see us as "godless marxists", they are concerned by the rise of the Nazis at home and abroad enough to reach out to us.
+
+- @accept
+- @refuse
+
+@accept
+title: accept the offer
+on-arrival: austrounited = 1; left_dissent *= 1.2; center_dissent *= 1.2;
+
+WIP
