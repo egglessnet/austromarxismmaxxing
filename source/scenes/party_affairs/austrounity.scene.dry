@@ -12,6 +12,12 @@ Although they see us as "godless marxists", they are concerned by the rise of th
 
 @accept
 title: accept the offer
-on-arrival: austrounited = 1; left_dissent *= 1.2; center_dissent *= 1.2;
+on-arrival: austrounited = 1; left_dissent *= 1.2; center_dissent *= 1.2; oep_r = z_r + spd_r + dvp_r; 
 
-WIP
+We accept the offer, creating the Austrian Unity Party, or Österreichische Einheitspartei (OEP).
+
+@refuse
+title: refuse the offer
+on-arrival: austrounity -= 1; left_dissent *= 5/6; center_dissent *= 5/6; z_relation -= z_r/10
+
+We have refused the offer.
