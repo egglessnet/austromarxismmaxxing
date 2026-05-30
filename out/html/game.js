@@ -125,7 +125,11 @@
         $('#audio_yes')[0].checked = true;
     }
   };
-
+if (window.dendryUI.dark_mode) {
+        $('#dark_mode_yes')[0].checked = true;
+    } else {
+        $('#dark_mode_no')[0].checked = true;
+    }
   
   // This function allows you to modify the text before it's displayed.
   // E.g. wrapping chat-like messages in spans.
