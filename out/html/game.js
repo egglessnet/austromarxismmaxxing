@@ -93,6 +93,16 @@
       window.dendryUI.saveSettings();
   };
 
+ window.enableDarkmode = function() {
+      window.dendryUI.dark_mode = true;
+      document.body.classList.add('dark-mode');
+      window.dendryUI.saveSettings();
+  };
+  window.disableDarkmode = function() {
+      window.dendryUI.dark_mode = false;
+      document.body.classList.remove('dark-mode');
+      window.dendryUI.saveSettings();
+  };
 
   // populates the checkboxes in the options view
   window.populateOptions = function() {
