@@ -1,8 +1,8 @@
 title: Otto Bauer
 is-pinned-card: true
 tags: advisor, centrist
-card-image: img/portraits/HilferdingRudolf.jpg
-face-image: img/portraits/HilferdingRudolf.jpg
+card-image: img/portraits/BauerOtto.jpg
+face-image: img/portraits/BauerOtto.jpg
 view-if: bauer_advisor = 1
 new-page: true
 
