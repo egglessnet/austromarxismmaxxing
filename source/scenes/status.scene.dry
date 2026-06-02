@@ -39,22 +39,22 @@ Chancellor: [+ chancellor +] ([+ chancellor_party +])
 
 Nationalrat composition:
 
-# 1928: 30, 1930: 25, 1932: 22
-SDAPO: [+ spd_r +]%
-# 1928: 15, 1930: 15, 1932: 
-CSP: [+ z_r +]%
-# 1928: 10, 1930: 13
+# 1927: 0, 1930: 0
 KPO: [+ kpd_r +]%
-# 1928: 14, 1930: 7
-GDVP: [+ dnvp_r +]%
-# 1928: 9, 1930: 5
+# 1927: 43, 1930: 43.6, 1932: 22
+SDAPO: [+ spd_r +]%
+# 1927: 5.5, 1930: joint list with GDVP
 LB: [+ dvp_r +]%
-# 1928: 5, 1930: 4 (as DstP)
+# 1927: 51.5, 1930: 40, 1932: 
+CSP: [+ z_r +]%
+# 1927: joint list with CSP, 1930: 11.5
+GDVP: [+ dnvp_r +]%
+# 1927: 0, 1930: 4.8
 [? if hb_formed == 1 : HB: [+ ddp_r +]% ?]
-# 1928: 3, 1930: 18
-DNSAP: [+ nsdap_r +]%
-# 1928: 9, 1930: 10
-Literally anything else: [+ other_r +]%
+# 1927: 0, 1930: 0
+[? if nsdap_formed == 1 : DNSAP: [+ nsdap_r +]% ?]
+# 1927: 0, 1930: 0
+Literally anything else: [+ (misc_left_r + misc_right_r) +]%
 
 [? if spd_in_government = 1 : Budget: [+ budget +] ?]
 
@@ -77,15 +77,15 @@ Economic growth: [+ economic_growth_2 +]%
 
 KPO: [+ kpd_relation : relationships +]
 
+LB: [+ dvp_relation : relationships +]
+
 CSP: [+ z_relation : relationships +]
 
 GDVP: [+ dnvp_relation : relationships +]
 
-LB: [+ dvp_relation : relationships +]
-
 [? if hb_formed == 1 : HB: [+ ddp_relation : relationships +] ?]
 
-DNSAP: [+ nsdap_relation : relationships +]
+[? if dnsap_formed == 1 : DNSAP: [+ nsdap_relation : relationships +] ?]
 
 = Internal Factions of the SPD
 
@@ -118,15 +118,23 @@ if (Q.sa_strength) {
 
 = Distribution of Power
 
-Heimwehr: [+ sh_force +]%
+Rote Front: [+ rfb_force +]%
 
 Schutzbund: [+ rb_force +]%
 
-Police: [+ prussia_force +]%
-
 Bundesheer: [+ army_force +]%
 
+Gendarmerie: [+ prussia_force +]%
+
+Heimwehr: [+ sh_force +]%
+
+Nazis: [+ sa_force +]%
+
 = Paramilitaries
+
+Rote Front Strength: [+ rfb_strength_2 +] thousand
+
+Rote Front Militarisation: [+ rfb_militancy : militancy +]
 
 Schutzbund Strength: [+ rb_strength_2 +] thousand
 
@@ -135,6 +143,10 @@ Schutzbund Militarization: [+ rb_militancy : militancy +]
 Heimwehr Strength: [+ sh_strength_2 +] thousand
 
 Heimwehr Militarization: [+ sh_militancy : militancy +]
+
+Nazi Strength: [+ sa_strength_2 +] thousand
+
+Nazi Militarisation: [+ sa_militancy : militancy +]
 
 = Official military/paramilitaries
 
@@ -157,21 +169,23 @@ Q.socialism_disp = Math.round(Q.socialism);
 
 (if the election were to be held now):
 
-SDAPO: [+ spd_votes +]%
-
-CSP: [+ z_votes +]%
-
 KPO: [+ kpd_votes +]%
 
-[? if hb_formed == 1 : HB: [+ ddp_votes +]% ?]
+SDAPO: [+ spd_votes +]%
+
+Minor left-wing parties: [+ misc_left_votes +]%
 
 LB: [+ dvp_votes +]%
 
+CSP: [+ z_votes +]%
+
 GDVP: [+ dnvp_votes +]%
 
-DNSAP: [+ nsdap_votes +]%
+Minor right-wing parties: [+ misc_right_votes +]%
 
-Others: [+ other_votes +]%
+[? if hb_formed == 1 : HB: [+ ddp_votes +]% ?]
+
+[? if nsdap_formed == 1 : DNSAP: [+ nsdap_votes +]% ?]
 
 **Detailed results for each demographic**
 
