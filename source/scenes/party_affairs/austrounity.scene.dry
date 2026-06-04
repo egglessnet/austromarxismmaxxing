@@ -1,6 +1,8 @@
 title: The CSP has a proposition...
 new-page: true
+is-card:true
 view-if: austrounity >= 1 and austrounity_timer <= 0 and z_relation > left_strength and peace == 1
+card-image: wholesomemaxxing.png
 on-arrival: austrounity_timer = 6
 
 In the light of the growing Nazi threat, the CSP has proposed a merger of all the parties in the Nationalrat, bar the pan-German GDVP and communist KPO.
