@@ -1,3 +1,3 @@
 title: A stock market crash
 view-if: inflation >= 4 and growth <= 1
-on-arrival: unemployed *= 2-growth; if spd_in_government spd_workers *=0.9; if kpd_in_government kpd_unemployed *= 0.9; if dvp_in_government dvp_rural *= 0.9; if z_in_government z_catholics *= 0.9; if dnvp_in_government old_middle
+on-arrival: unemployed *= 2-growth; if spd_in_government spd_workers *=0.9; if kpd_in_government kpd_unemployed *= 0.9; if dvp_in_government dvp_rural *= 0.9; if z_in_government z_catholics *= 0.9; if dnvp_in_government old_middle_dnvp *= 0.9
