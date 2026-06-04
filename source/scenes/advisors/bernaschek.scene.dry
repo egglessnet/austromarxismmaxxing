@@ -7,7 +7,7 @@ new-page: true
 
 = Ludwig Bernaschek
 
-Leber was a soldier in the great war, formerly leader of the socialist youth in Linz. He is head of the material department of the Schutzbund.
+Bernaschek was a soldier in the great war, formerly leader of the socialist youth in Linz. He is head of the material department of the Schutzbund.
 
 - @schutz
 - @socialist_youth
@@ -22,7 +22,7 @@ title: Fund the schutzbund.
 subtitle: Increase armaments and training.
 choose-if: advisor_action_timer == 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6; rb_militancy += 0.1*(1-rb_militancy); neorevisionist_strength += 5; left_strength += 3; if spd_votes > 20 rb_strength += (spd_votes/10);
+on-arrival: advisor_action_timer = 6; rb_militancy += 0.1*(1-rb_militancy); neorevisionist_strength += 5; left_strength += 3; if spd_votes > 20 {rb_strength += (spd_votes/10)};
 
 Bernaschek helps us to militarise the Schutzbund.
 
