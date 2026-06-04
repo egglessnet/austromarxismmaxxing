@@ -17,7 +17,7 @@ Our crisis is continuing. The Austrofascist government led by Engelbert Dollfuß
 
 [? if rb_strength < 200: Now we is entering a state of civil war. The police has attempted to seize weapons from the Republikanischer Schutzbund, the Schutzbund is responding with force, attacking the police. Fighting has sporadically broken out between Schutzbund and government forces all over Austria. ?]
 
-[? if rb_strength >= 200: The government's attempts to suppress us and the Schutzbund are being met with mass protest. [? if eu_austria: We are also supported by the recently formed European Union, with economic sanctions targeting the government. ?]
+[? if rb_strength >= 200: The government's attempts to suppress us and the Schutzbund are being met with mass protest. [? if eu_austria: We are also supported by the recently formed European Union, with economic sanctions targeting the government. ?] ?]
 
 Eventually...
 
