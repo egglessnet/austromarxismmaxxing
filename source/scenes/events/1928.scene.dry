@@ -6,7 +6,7 @@ Q.economic_growth *= 0.8;
 Q.inflation *= 0.95;
 Q.unemployed *= 1.1;
 Q.dr_exists = 0;
-
+!}
 tags: event
 view-if: year = 1928 and month = 1 and locarno_seen
 priority: 2
