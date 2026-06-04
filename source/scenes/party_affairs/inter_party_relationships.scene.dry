@@ -57,8 +57,7 @@ The Dollfuss regime makes building friendly relations difficult, but we are able
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1;
-on-arrival: dvp_relation += 5*(1 - dissent)
+on-arrival: resources -= 1; dvp_relation += 5*(1 - dissent)
 
 The Landbund is fundamentally antisocialist, but they are warming to the fact that the peasants are proletarians.
 
