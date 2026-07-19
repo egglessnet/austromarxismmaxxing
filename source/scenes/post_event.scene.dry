@@ -2171,3 +2171,4 @@ go-to: events_choice if has_event = 1 and not go_to_advisor_loss; main if has_ev
 - #event
 
 # This scene is solely for updating numbers after events, and routing to special events.
+!}
