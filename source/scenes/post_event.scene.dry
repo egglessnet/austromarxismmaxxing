@@ -1,6 +1,35 @@
 title: Post Event
 new-page: true
 on-arrival: {!
+if (Q.dvp_relation >= 30) {
+Q.z_relation += dvp_relation/100
+}
+if (Q.dnvp_relation >= 30) {
+Q.z_relation += dnvp_relation/100
+}
+if (Q.ddp_relation >= 30) {
+Q.z_relation += ddp_relation/100
+}
+if (Q.dvp_relation >= 30) {
+Q.z_relation += dvp_relation/100
+}
+if (Q.z_relation < 30) {
+Q.dvp_relation -= (30-z_relation)/100
+Q.ddp_relation -= (30-z_relation)/100
+Q.dnvp_relation -= (30-z_relation)/100
+}
+if (Q.kpd_relation >= 40) {
+Q.z_relation -= kpd_relation/100
+}
+if (Q.nsdap_relation >= 40) {
+Q.kpd_relation -= nsdap_relation/100
+}
+Q.workers_spd += (labor_strength+left_strength+center_strength-z_relation-dissent)/100
+Q.new_middle_spd += (reformist_strength+dnvp_relation-left_strength-dissent)/100
+Q.old_middle_spd += (z_relation+dnvp_relation-left_strength-pacifism-dissent)/100
+Q.rural_spd += (z_relation+dvp_relation-dissent)/100
+Q.unemployed_spd += (left_strength+labor_strength+kpd_relation-z_relation-dissent)/100
+
 Q.last_advisor_action = 0;
 // make sure no stat is below 0.
 for (var c of Q.classes) {
@@ -61,29 +90,6 @@ for (var party of Q.parties) {
     Q[party+'_normalized'] = Q[party + '_support']/total_support;
     Q[party+'_votes'] = Math.round(Q[party+'_normalized']*100);
     Q[party+'_votes_display'] = Math.round(Q[party+'_normalized']*100);
-}
-
-
-// set faction strength/dissent to 0
-for (var c of Q.factions) {
-    if (Q[c+'_dissent'] < 0) {
-        Q[c+'_dissent'] = 0;
-    } else if (Q[c+'_dissent'] >= 100) {
-        Q[c+'_dissent'] = 99;
-    }
-    if (Q[c+'_strength'] < 0) {
-        Q[c+'_strength'] = 0;
-    }
-}
-
-if (Q.unemployed <= 1) {
-    Q.unemployed = 1;
-}
-if (Q.reichswehr_strength < 0) {
-    Q.reichswehr_strength = 0;
-}
-if (Q.rb_militancy < 0) {
-    Q.rb_militancy = 0;
 }
 
 // re-calculate dissent.
@@ -270,11 +276,11 @@ if (Q.month_actions >= 1) {
     // change economic stats...
     // we're basically implicity drawing a Philips curve
     // budget deficits lead to some inflation
-    if (Q.budget <= 0 && Q.budget > -2 && Q.inflation < 2.5) {
-        Q.inflation += 0.1;
+    if (Q.unemployed < 5) {
+        Q.inflation += 1-(unemployed/10);
     }
-    if (Q.budget <= -2 && Q.budget > -5 && Q.inflation < 5) {
-        Q.inflation += 0.2;
+    if (Q.unemployed >= 5 && Q.unemployed < 10) {
+        Q.inflation += 1-(unemployed/20);
         if (Q.unemployed >= 12) {
             Q.inflation -= 0.1;
         }
