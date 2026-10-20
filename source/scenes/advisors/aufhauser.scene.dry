@@ -1,18 +1,18 @@
-title: Siegfried Aufhäuser
+title: Manfred Ackermann
 is-pinned-card: true
 tags: advisor, reformist
 card-image: img/portraits/AufhäuserSiegfried.jpg
 view-if: aufhauser_advisor = 1
 new-page: true 
 
-= Siegfried Aufhäuser
+= Manfred Ackermann
 
-Aufhäuser is a leader of the AfA-Bund, the federation of socialist white-collar trade unions.
+Aufhäuser is a prominent member of the GPA, the federation of socialist white-collar trade unions, and the youth wing of the party.
 
 - @white_collar
 - @union_unity
 - @crisis
-- @moderate_economic_plan
+- @youth_wing
 - @radicalize_middle
 - @root: Return to main
 
@@ -21,7 +21,7 @@ title: Organizing white-collar workers
 subtitle: Improve our standing among the new middle class.
 choose-if: advisor_action_timer <= 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] 
-on-arrival: advisor_action_timer = 6; new_middle_spd += 6*(1-dissent); socialism += 3*(1-dissent)
+on-arrival: advisor_action_timer = 6; new_middle_sdapo += 6*(1-dissent); socialism += 3*(1-dissent)
 
 We have increased our organizing among white-collar workers.
 
@@ -36,19 +36,18 @@ We have reduced tensions with the Labor faction.
 
 @crisis
 title: Addressing the economic crisis
-subtitle: Aufhäuser can help support a left-wing economic program.
+subtitle: Ackermann can help support a left-wing economic program.
 choose-if: advisor_action_timer <= 0 and nationalization_adopted == 0 and black_thursday_seen == 1 and nationalization_support <= 3
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?][? if nationalization_adopted > 0 : We have already adopted the Left plan. ?]
 on-arrival: advisor_action_timer = 6; 
 go-to: crisis_program.support_left 
 
-@moderate_economic_plan
-title: Support the reformist economic plan
-subtitle: Aufhäuser can also support a moderate economic plan.
-choose-if: advisor_action_timer = 0 and moderate_plan_adopted = 0 and black_thursday_seen = 1
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if moderate_economic_plan = 0 : We have already adopted the reformist economic plan. ?] [? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?]
-on-arrival: advisor_action_timer = 6
-go-to: crisis_program.support_moderate
+@youth_wing
+title: Support the youth organisations
+subtitle: Ackermann can expand our youth organisations
+choose-if: advisor_action_timer = 0 and resources >= 1
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if resources < 1 : do not have the necessary resources ?]
+on-arrival: advisor_action_timer = 6; resources -= 1; sb_strength += 50; sb_militancy += 0.02; young_socialists += 1; left_strength += 5; reformist_strength += 5; radicalization += 1;
 
 @radicalize_middle
 title: Radicalize the new middle class.
