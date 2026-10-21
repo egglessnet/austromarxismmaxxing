@@ -20,7 +20,7 @@ title: Reduce dissent
 subtitle: Adler can reduce factional dissent.
 choose-if: advisor_action_timer <= 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6; left dissent -= 8; labour dissent -= 8; centre_dissent -= 8; reformist_dissent -= 8;
+on-arrival: advisor_action_timer = 6; left_dissent -= 8; labour_dissent -= 8; centre_dissent -= 8; reformist_dissent -= 8;
 
 We have improved our relations with the Z, [+ ddp_name +], and DVP, and reduced tensions with the coalition.
 
