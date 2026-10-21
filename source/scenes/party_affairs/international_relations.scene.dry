@@ -28,7 +28,7 @@ on-arrival: resources -= 1; west_relation += 1; reformist_strength += 5; pacifis
 
 The socialists of France and Britain can influence their governments to be friendlier towards Germany. Hopefully they will reduce our reparations burden.
 
-@austria
+@germany
 subtitle: -1 resources [? if austrian_parliament_seen and not austrian_civil_war_seen: - they will also help us oppose the dictatorship. ?]
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
