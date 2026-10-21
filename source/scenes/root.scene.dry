@@ -978,7 +978,7 @@ The legislative rework has been disabled.
 
 @1925
 view-if: year != 1925
-go-to: 1925_root
+go-to: 1918_root
 
 The starting date has been changed to 1925. This is so WIP you wouldn't believe it. Literally unplayable. Don't blame me when it's exactly as I warned.
 
