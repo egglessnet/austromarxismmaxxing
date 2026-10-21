@@ -12,7 +12,7 @@ max-visits: 12
 
 The SPD cannot govern by itself yet. Because we do not have an electoral majority, we need the support of other parties. Recently, our governments have consisted of the Weimar Coalition of the SPD, Center, and Democratic parties. We can reach out and build additional connections with these parties, or perhaps we can stand alone.
 
-- @rural: Strengthen our bonds with the rural Landbund.
+- @liberal: Strengthen our bonds with the agrarian-liberal Landbund and german-liberal GDVP.
 - @center: Try to repair our relations with the Catholic CSP.
 - @kpd: Bolster our relationships with the Communist Party.
 - @spd_alone: The SPD can stand alone for now.
@@ -53,7 +53,7 @@ on-arrival: z_relation += 2*(1 - dissent)
 
 The Dollfuss regime makes building friendly relations difficult, but we are able to reduce tensions.
 
-@liberals
+@liberal
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
