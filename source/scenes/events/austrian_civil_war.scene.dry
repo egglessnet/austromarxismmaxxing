@@ -83,3 +83,9 @@ achievement: arbeiter_von_wien
 The result is that the Austrofascists have backed down! Caught in an untenable position domestically and abroad, they have agreed to restore the National Council and resign from government, holding new elections. Now begins the long work of reconstruction. We are likely to be brought closer to the USSR as a result.
 
 [? if eu_austria: This is a great success of the new European Union, and its prestige is seen to rise internationally. ?]
+
+@negotiations
+title: Negotiate peace
+subtitle: WIP
+
+WIP
