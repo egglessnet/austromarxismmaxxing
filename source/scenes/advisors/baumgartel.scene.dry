@@ -1,16 +1,17 @@
-title: Theodor Leipart
+title: Emil Baumgartel
 is-pinned-card: true
 tags: advisor, labor
 card-image: img/portraits/LeipartTheodor.jpg
-view-if: leipart_advisor = 1
+view-if: baumgartel_advisor = 1
 new-page: true 
 
-= Theodor Leipart
+= Emil Baumgartel
 
-Leipart is a leader of the ADGB, the largest federation of socialist trade unions.
+Baumgartel is a leader of the ADGB, the largest federation of socialist trade unions.
 
 - @organizing
 - @depression
+- @economic_democracy_
 - @root: Return to main
 
 # leipart was one of the people who argued for union independence
@@ -42,3 +43,11 @@ unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +
 on-arrival: advisor_action_timer = 6; labor_dissent -= 5; labor_strength += 5
 
 We have reduced tensions with the Labor faction, and increased its strength in the party.
+
+@economic_democracy_
+title: Economic Democracy
+subtitle: Enact policies to build a more democratic economy.
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if spd_in_government = 0 : SPD not in government: ?] [? if labor_minister_party != "SPD" or (finance_minister_party != "SPD" and economic_minister_party != "SPD") : We do not have the necessary government ministers. ?]
+choose-if: advisor_action_timer == 0 and spd_in_government == 1 and (economic_minister_party == "SPD" or finance_minister_party == "SPD") and (labor_minister_party == "SPD")
+on-arrival: advisor_action_timer = 6; economic_democracy_timer -= 10; last_advisor_action = 1
+go-to: economic_democracy
